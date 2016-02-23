@@ -37,6 +37,7 @@ class ToolsController < ApplicationController
     #add attributes to that tool
     #try to save tool
     if @tool.save
+      flash[:message] = "THIS IS THE MESSAGE TO LET YOU KNOW YOU CREATED A TOOL"
       #if tool saves send user to view tool(database will send user)
       redirect_to tool_path(@tool.id)
     else

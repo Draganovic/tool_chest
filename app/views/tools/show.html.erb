@@ -2,3 +2,6 @@
 <h3><%= @tool.formatted_price %></h3>
 <%= link_to "Destroy #{@tool.name}", tool_path(@tool.id), method: "delete" %>
 <%= link_to "Update#{@tool.name}", edit_tool_path(@tool.id)  %>
+<% flash.each do |type, msg| %>
+    <%= content_tag :div, msg, class: "flash_#{type}" %>
+<% end %>
