@@ -39,6 +39,7 @@ class ToolsController < ApplicationController
     if @tool.save
       flash[:message] = "THIS IS THE MESSAGE TO LET YOU KNOW YOU CREATED A TOOL"
       #if tool saves send user to view tool(database will send user)
+      session[:most_recent_tool_id] = @tool.id 
       redirect_to tool_path(@tool.id)
     else
       #if not saved we will render the new view
